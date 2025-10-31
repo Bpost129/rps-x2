@@ -12,8 +12,8 @@ const resultDisplayEl = document.getElementById('result-display')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-document.getElementById('rock').addEventListener('click', play)
-document.getElementById('paper').addEventListener('click', play)
-document.getElementById('scissors').addEventListener('click', play)
+document.querySelectorAll("button").forEach(function (button) {
+  button.addEventListener("click", play)
+})
 
 /*-------------------------------- Functions --------------------------------*/
