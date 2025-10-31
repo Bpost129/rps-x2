@@ -22,6 +22,7 @@ function play(e) {
   getPlayerChoice(e)
   getCpuChoice()
   compare()
+  render()
 }
 
 function getPlayerChoice(e) {
@@ -34,15 +35,19 @@ function getCpuChoice() {
 }
 
 function compare() {
-  if (playerChoice === computerChoice) {
+  if (playerChoice === cpuChoice) {
     msg = 'You tied!'
-  } else if (playerChoice === choices[0] && computerChoice === choices[2]) {
+  } else if (playerChoice === choices[0] && cpuChoice === choices[2]) {
     msg = "Congrats! You win!"
-  } else if (playerChoice === choices[1] && computerChoice === choices[0]) {
+  } else if (playerChoice === choices[1] && cpuChoice === choices[0]) {
     msg = "Congrats! You win!"
-  } else if (playerChoice === choices[2] && computerChoice === choices[1]) {
+  } else if (playerChoice === choices[2] && cpuChoice === choices[1]) {
     msg = "Congrats! You win!"
   } else {
     msg = "You lose! Try again?"
   }
+}
+
+function render() {
+  resultDisplayEl.textContent = `You chose ${playerChoice} and the computer chose ${cpuChoice}. ${msg}`
 }
